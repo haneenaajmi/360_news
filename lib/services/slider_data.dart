@@ -14,20 +14,20 @@ List<SliderModel> getSliders() {
   slider.add(categoryModel);
   categoryModel = new SliderModel();
 
-// categoryModel.image="images/general.jpg";
-// categoryModel.name="Bow to the Authority of silenforce";
-// slider.add(categoryModel);
-// categoryModel= new SliderModel();
+  categoryModel.image = "images/general.jpg";
+  categoryModel.name = "Bow to the Authority of silenforce";
+  slider.add(categoryModel);
+  categoryModel = new SliderModel();
 
   categoryModel.image = "images/health.jpg";
   categoryModel.name = "Bow to the Authority of silenforce";
   slider.add(categoryModel);
   categoryModel = new SliderModel();
 
-// categoryModel.image="images/sports.jpg";
-// categoryModel.name="Bow to the Authority of silenforce";
-// slider.add(categoryModel);
-// categoryModel= new SliderModel();
+  categoryModel.image = "images/sports.jpg";
+  categoryModel.name = "Bow to the Authority of silenforce";
+  slider.add(categoryModel);
+  categoryModel = new SliderModel();
 
   return slider;
 }
