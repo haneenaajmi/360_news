@@ -1,4 +1,4 @@
 class CategoryModel {
   String? categoryName;
-  String? Image;
+  String? image;
 }

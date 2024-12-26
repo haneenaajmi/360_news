@@ -1,13 +1,16 @@
 import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'package:news_app_360/models/show_category.dart';
 import 'package:news_app_360/models/slider_model.dart';
 
-class Sliders {
-  List<SliderModel> sliders = [];
+class ShowCategoryNews {
+  List<ShowCategoryModel> categories = [];
 
-  Future<void> getslider() async {
+  Future<void> getCategoriesNews(String category) async {
     String url =
-        "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=0d08981523a8496db787550597f3c372";
+        "https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=0d08981523a8496db787550597f3c372";
     var response = await http.get(Uri.parse(url));
 
     var jsonData = jsonDecode(response.body);
@@ -15,7 +18,7 @@ class Sliders {
     if (jsonData['status'] == 'Ok') {
       jsonData["articles"].forEach((element) {
         if (element["urlToImage"] != null && element['description'] != null) {
-          SliderModel sliderModel = SliderModel(
+          ShowCategoryModel categoryModel = ShowCategoryModel(
             title: element["title"],
             description: element["description"],
             url: element["url"],
@@ -23,7 +26,7 @@ class Sliders {
             content: element["content"],
             author: element["author"],
           );
-          sliders.add(sliderModel);
+          categories.add(categoryModel);
         }
       });
     }
